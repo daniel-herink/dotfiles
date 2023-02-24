@@ -1,0 +1,26 @@
+PATH=$HOME/.local/bin:$PATH
+PATH=$HOME/.cargo/bin:$PATH
+PATH=/mnt/fast-data0/xilinx/Vivado/2022.2/bin:$PATH
+PATH=/mnt/fast-data0/xilinx/Vitis_HLS/2022.2/bin:$PATH
+PATH=/mnt/fast-data0/xilinx/Model_Composer/2022.2/bin:$PATH
+export PATH
+
+# pip zsh completion start
+function _pip_completion {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] 2>/dev/null ))
+}
+compctl -K _pip_completion pip
+# pip zsh completion end
+
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+export NVM_DIR="$HOME/.nvm"
+if [[ -d $NVM_DIR ]]; then
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
