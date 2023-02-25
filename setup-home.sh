@@ -8,7 +8,7 @@ local p10k_home=$omz_home/custom/themes/powerlevel10k
 
 if [[ ! -d $omz_home ]]; then
     echo "Going to install oh-my-zsh..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/ohmyzsh/ohmyzsh.git $omz_home
 else
     echo "Found oh-my-zsh installation at $omz_home"
 fi
