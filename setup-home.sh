@@ -1,6 +1,6 @@
 #! /bin/zsh
 
-echo "Starting Zsh prompt setup: going to install oh-my-zsh and Powerlevel10k"
+echo "Starting Zsh prompt setup: going to install oh-my-zsh and Powerlevel10k\n"
 
 local omz_home=${HOME}/.oh-my-zsh
 local zsh_256color_home=$omz_home/custom/plugins/zsh-256color
@@ -13,12 +13,16 @@ else
     echo "Found oh-my-zsh installation at $omz_home"
 fi
 
+echo ""
+
 if [[ ! -d $zsh_256color_home ]]; then
     echo "Going to install zsh-256color..."
     git clone https://github.com/chrissicool/zsh-256color $zsh_256color_home
 else
     echo "Found zsh-256color installation at $zsh_256color_home"
 fi
+
+echo ""
 
 if [[ ! -d $p10k_home ]]; then
     echo "Going to install Powerlevel10k..."
@@ -27,6 +31,6 @@ else
     echo "Found Powerleve10k installation at $p10k_home"
 fi
 
-echo "Cleaning up the unneeded Git files"
+echo "\nCleaning up the unneeded Git files"
 rm -rf LICENSE .git/
 echo "Done"
