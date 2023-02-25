@@ -48,5 +48,5 @@ else
 fi
 
 echo "\nCleaning up the unneeded Git files"
-# rm -rf LICENSE .git/
+rm -rf LICENSE .git/
 echo "Done"
