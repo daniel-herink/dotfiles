@@ -1,5 +1,10 @@
+# Set PATH (starting with default paths)
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/games
 PATH=$HOME/.local/bin:$PATH
 PATH=$HOME/.cargo/bin:$PATH
+PATH=/mnt/fast-data0/xilinx/Vivado/2022.2/bin:$PATH
+PATH=/mnt/fast-data0/xilinx/Vitis_HLS/2022.2/bin:$PATH
+PATH=/mnt/fast-data0/xilinx/Model_Composer/2022.2/bin:$PATH
 export PATH
 
 # pip zsh completion start
