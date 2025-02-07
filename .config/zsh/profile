@@ -70,6 +70,8 @@ HIST_STAMPS="yyyy-mm-dd"
 
 plugins=(git zsh-256color)
 
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -78,10 +80,11 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 source ${HOME}/.config/zsh/aliases
+soruce ${HOME}/.config/zsh/functions
 source ${HOME}/.config/zsh/env
 
-# Load completions
-autoload compinit -Uz && compinit -C
+# Load pip completion functions
+compctl -K _pip_completion pip
 
 # The following may not be needed with modern terminals
 # autoload -U colors && colors # Resets colors (?)
