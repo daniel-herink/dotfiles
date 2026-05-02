@@ -57,4 +57,17 @@ else
 fi
 
 echo ""
+
+DOTFILES=$(cd "$(dirname "$0")" && pwd)
+
+echo "Linking config files..."
+
+ln -sf "$DOTFILES/.tmux.conf" "$HOME/.tmux.conf"
+echo "  ~/.tmux.conf"
+
+mkdir -p "$HOME/.config/nvim"
+ln -sf "$DOTFILES/.config/nvim/init.lua" "$HOME/.config/nvim/init.lua"
+echo "  ~/.config/nvim/init.lua"
+
+echo ""
 echo "Done"
