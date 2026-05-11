@@ -2,7 +2,10 @@
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/games
 PATH=$HOME/.local/bin:$PATH
 PATH=$HOME/.cargo/bin:$PATH
+PATH=$HOME/.rvm/bin:$PATH
 export PATH
+unset LD_LIBRARY_PATH
+unset LD_RUN_PATH
 
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
