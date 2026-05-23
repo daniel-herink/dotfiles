@@ -62,6 +62,15 @@ fi
 
 echo ""
 
+if [[ ! -d "$omz_plugins/zsh-256color" ]]; then
+    echo "Going to install zsh-256color..."
+    git clone https://github.com/chrissicool/zsh-256color "$omz_plugins/zsh-256color"
+else
+    echo "Found zsh-256color at $omz_plugins/zsh-256color"
+fi
+
+echo ""
+
 if [[ ! -d "$omz_themes/powerlevel10k" ]]; then
     echo "Going to install Powerlevel10k..."
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$omz_themes/powerlevel10k"
